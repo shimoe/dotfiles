@@ -112,6 +112,13 @@
 (add-to-list 'auto-mode-alist '("\\.sdf\\'" . xml-mode))
 (add-to-list 'auto-mode-alist '("\\.world\\'" . xml-mode))
 
+;;CMakeListsをcmake-modeで読み込む
+(require 'cmake-mode); Add cmake listfile names to the mode list.
+(setq auto-mode-alist
+	  (append
+	   '(("CMakeLists\\.txt\\'" . cmake-mode))
+	   '(("\\.cmake\\'" . cmake-mode))
+	   auto-mode-alist))
 (fset 'yes-or-no-p 'y-or-n-p) ;; "yes or no" の選択を "y or n" にする
 
 (electric-pair-mode 1) ;;auto () complete
