@@ -1,0 +1,3 @@
+(setq user-env-table '(
+("multicolumn")
+))
