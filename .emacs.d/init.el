@@ -92,6 +92,18 @@
 (require 'minimap)
 (global-set-key (kbd "C-x m") 'minimap-mode) 
 
+;;----------------------------------------------------------------------------
+;; xml-mode
+;;----------------------------------------------------------------------------
+(add-to-list 'auto-mode-alist '("\\.launch\\'" . xml-mode))
+(add-to-list 'auto-mode-alist '("\\.xacro\\'" . xml-mode))
+(add-to-list 'auto-mode-alist '("\\.urdf\\'" . xml-mode))
+(add-to-list 'auto-mode-alist '("\\.config\\'" . xml-mode))
+(add-to-list 'auto-mode-alist '("\\.sdf\\'" . xml-mode))
+(add-to-list 'auto-mode-alist '("\\.world\\'" . xml-mode))
+
+(setq indet-tab-mode nil)
+(setq nxml-slash-auto-complete-flag t)
 
 ;;----------------------------------------------------------------------------
 ;;色々設定
@@ -103,14 +115,6 @@
 
 (setq inhibit-startup-message t) ;; スタート画面を表示しない
 
-
-;; 色々xml-mode で読み込む
-(add-to-list 'auto-mode-alist '("\\.launch\\'" . xml-mode))
-(add-to-list 'auto-mode-alist '("\\.xacro\\'" . xml-mode))
-(add-to-list 'auto-mode-alist '("\\.urdf\\'" . xml-mode))
-(add-to-list 'auto-mode-alist '("\\.config\\'" . xml-mode))
-(add-to-list 'auto-mode-alist '("\\.sdf\\'" . xml-mode))
-(add-to-list 'auto-mode-alist '("\\.world\\'" . xml-mode))
 
 ;;CMakeListsをcmake-modeで読み込む
 (require 'cmake-mode); Add cmake listfile names to the mode list.
