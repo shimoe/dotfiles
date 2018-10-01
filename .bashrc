@@ -143,3 +143,30 @@ export CXX='g++-7'
 # 	tmux
 #    fi
 #fi
+
+
+#Git状態表示
+function parse_git_branch {
+    git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ [\1]/'
+}
+function promps {
+    # 色は気分で変えたいかもしれないので変す宣言しておく
+    local  BLUE="\[\e[1;34m\]"
+    local  RED="\[\e[1;31m\]"
+    local  GREEN="\[\e[1;32m\]"
+    local  WHITE="\[\e[00m\]"
+    local  GRAY="\[\e[1;37m\]"
+
+    case $TERM in
+        xterm*) TITLEBAR='\[\e]0;\W\007\]';;
+        *)      TITLEBAR="";;
+    esac
+    local BASE="\u@\h"
+    PS1="${TITLEBAR}${WHITE}${BASE}${WHITE}:${WHITE}\w${GREEN}\$(parse_git_branch)\n${BLUE}\$${WHITE} "
+}
+promps
+
+
+
+PATH="$HOME/bin:$HOME/.local/bin:$PATH"
+source /opt/Algoryx/AgX-2.23.0.4/setup_env.bash

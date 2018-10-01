@@ -143,6 +143,8 @@
 (add-to-list 'load-path "~/.emacs.d/yaml-mode")
 (require 'yaml-mode)
 (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
+(add-to-list 'auto-mode-alist '("\\.body\\'" . yaml-mode))
+(add-to-list 'auto-mode-alist '("\\.cnoid\\'" . yaml-mode))
 (add-to-list 'auto-mode-alist '("\\.yaml\\'" . yaml-mode))
 
 
@@ -332,7 +334,7 @@
  '(minimap-window-location (quote right))
  '(package-selected-packages
    (quote
-    (all-the-icons-dired all-the-icons-gnus all-the-icons-ivy yasnippet point-undo neotree magit irony-eldoc company-irony auto-complete-clang-async auto-complete-clang auctex-latexmk all-the-icons))))
+    (yaml-mode all-the-icons-dired all-the-icons-gnus all-the-icons-ivy yasnippet point-undo neotree magit irony-eldoc company-irony auto-complete-clang-async auto-complete-clang auctex-latexmk all-the-icons))))
 
 ;; let "C-x C-d" dired current directory
 (defun dired-here ()
