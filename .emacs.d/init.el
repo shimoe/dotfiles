@@ -94,20 +94,6 @@
 (require 'minimap)
 (global-set-key (kbd "C-x m") 'minimap-mode) 
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(minimap-automatically-delete-window t)
- '(minimap-minimum-width 10)
- '(minimap-mode nil)
- '(minimap-width-fraction 0.02)
- '(minimap-window-location  'right)
- '(package-selected-packages
-   (quote
-    (minimap yaml-mode all-the-icons-dired all-the-icons-gnus all-the-icons-ivy yasnippet point-undo neotree magit irony-eldoc company-irony auto-complete-clang-async auto-complete-clang auctex-latexmk all-the-icons))))
-
 ;;----------------------------------------------------------------------------
 ;; xml-mode
 ;;----------------------------------------------------------------------------
@@ -337,6 +323,19 @@
 (require 'magit)
 (global-set-key (kbd "C-x g") 'magit-status)
 
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(minimap-automatically-delete-window t)
+ '(minimap-minimum-width 10)
+ '(minimap-mode nil)
+ '(minimap-width-fraction 0.02)
+ '(minimap-window-location (quote right))
+ '(package-selected-packages
+   (quote
+    (multi-term minimap yaml-mode all-the-icons-dired all-the-icons-gnus all-the-icons-ivy yasnippet point-undo neotree magit irony-eldoc company-irony auto-complete-clang-async auto-complete-clang auctex-latexmk all-the-icons))))
 
 
 
@@ -381,6 +380,12 @@
 (setq auto-mode-alist (cons
                        '("\\.md" . markdown-mode)
                        auto-mode-alist))
+
+;;------------------------------------------------------------------------------------------------
+;; terminal-mode
+;;------------------------------------------------------------------------------------------------
+(require 'multi-term)
+(global-set-key (kbd "C-S-t") 'multi-term)
 
 ;; ;;------------------------------------------------------------------------------------------------
 ;; ;;auto  all indent
