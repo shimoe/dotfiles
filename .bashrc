@@ -114,7 +114,6 @@ if ! shopt -oq posix; then
 fi
 
 #ROS setting
-source /opt/ros/indigo/setup.bash
 source /opt/ros/kinetic/setup.bash
 
 #default editor setting
@@ -124,6 +123,7 @@ alias emcas='emacs'
 #more cd
 alias cdw='cd ~/workspace'
 alias ud='cd ../'
+
 
 export CXX='g++-7'
 
@@ -166,7 +166,12 @@ function promps {
 }
 promps
 
+#git tree
+#git log --graph --all --format="%x09%C(cyan bold)%an%Creset%x09%C(yellow)%h%Creset %C(magenta reverse)%d%Creset %s"
 
+ 
 
 PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 source /opt/Algoryx/AgX-2.23.0.4/setup_env.bash
+source /home/shimoe/workspace/ROS/icp_mapping_ws/devel/setup.bash
+source /home/shimoe/workspace/ROS/WRS2018_ws/devel/setup.bash

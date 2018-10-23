@@ -4,14 +4,14 @@
 (setq load-path
       (append
        (list
- 	(expand-file-name "./site-lisp/")
- 	)
+        (expand-file-name "./site-lisp/")
+        )
        load-path))
 
 ;;add MELPA
 (require 'package) ;; You might already have this line
 (add-to-list 'package-archives
- 	     '("melpa" . "https://melpa.org/packages/"))
+             '("melpa" . "https://melpa.org/packages/"))
 (when (< emacs-major-version 24)
   ;; For important compatibility libraries like cl-lib
   (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
@@ -47,16 +47,16 @@
 ;; Warning の抑制
 (setq byte-compile-warnings
       '(not
-	free-vars
-	unresolved
-	callargs
-	redefine
-	;; obsolete
-	noruntime
-	cl-functions
-	interactive-only
-	;; make-local
-	))
+        free-vars
+        unresolved
+        callargs
+        redefine
+        ;; obsolete
+        noruntime
+        cl-functions
+        interactive-only
+        ;; make-local
+        ))
 
 ;; 言語を日本語にする
 (set-language-environment 'Japanese)
@@ -77,8 +77,8 @@
 ;;------------------------------------------------------------------------------
 ;; 矩形選択
 ;;------------------------------------------------------------------------------
-; C-Ret で矩形選択
-; 詳しいキーバインド操作：http://dev.ariel-networks.com/articles/emacs/part5/
+;C-Ret で矩形選択
+;キーバインド操作：http://dev.ariel-networks.com/articles/emacs/part5/
 (cua-mode t)
 (setq cua-enable-cua-keys nil)
 
@@ -93,6 +93,20 @@
 (add-to-list 'load-path "~/.emacs.d/minimap/")
 (require 'minimap)
 (global-set-key (kbd "C-x m") 'minimap-mode) 
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(minimap-automatically-delete-window t)
+ '(minimap-minimum-width 10)
+ '(minimap-mode nil)
+ '(minimap-width-fraction 0.02)
+ '(minimap-window-location  'right)
+ '(package-selected-packages
+   (quote
+    (minimap yaml-mode all-the-icons-dired all-the-icons-gnus all-the-icons-ivy yasnippet point-undo neotree magit irony-eldoc company-irony auto-complete-clang-async auto-complete-clang auctex-latexmk all-the-icons))))
 
 ;;----------------------------------------------------------------------------
 ;; xml-mode
@@ -129,7 +143,7 @@
 
 (electric-pair-mode 1) ;;auto () complete
 
-;(setq vc-handled-backends nil) ;;なんだっけこれ
+                                        ;(setq vc-handled-backends nil) ;;なんだっけこれ
 
 (put 'upcase-region 'disabled nil)
 
@@ -172,8 +186,8 @@
 (autoload 'yatex-mode "yatex" "Yet Another LaTeX mode" t)
 (setq load-path
       (cons (expand-file-name
-	     "/usr/share/emacs24/site-lisp/yatex/")
-	    load-path))
+             "/usr/share/emacs24/site-lisp/yatex/")
+            load-path))
 (setq YaTeX-kanji-code 4)
 
 ;;自動改行禁止
@@ -197,7 +211,7 @@
 ;;テンプレ挿入
 (setq YaTeX-template-file
       (expand-file-name "~/template/template.tex")) 
-; 基本的なシンタックスハイライトは /usr/share/emacs/site-lisp/yatex/yatexlib.el の1400行あたりを直接弄った 
+                                        ; 基本的なシンタックスハイライトは /usr/share/emacs/site-lisp/yatex/yatexlib.el の1400行あたりを直接弄った 
 
 ;;------------------------------------------------------------------------------
 ;;画面端改行切り替え
@@ -252,29 +266,29 @@
 ;; 折りたたみ
 ;;------------------------------------------------------------------------------
 (add-hook 'c++-mode-hook
-	  '(lambda ()
-	     (hs-minor-mode 1)))
+          '(lambda ()
+             (hs-minor-mode 1)))
 (add-hook 'c-mode-hook
-	  '(lambda ()
-	     (hs-minor-mode 1)))
+          '(lambda ()
+             (hs-minor-mode 1)))
 (add-hook 'scheme-mode-hook
-	  '(lambda ()
-	     (hs-minor-mode 1)))
+          '(lambda ()
+             (hs-minor-mode 1)))
 (add-hook 'emacs-lisp-mode-hook
-	  '(lambda ()
-	     (hs-minor-mode 1)))
+          '(lambda ()
+             (hs-minor-mode 1)))
 (add-hook 'lisp-mode-hook
-	  '(lambda ()
-	     (hs-minor-mode 1)))
+          '(lambda ()
+             (hs-minor-mode 1)))
 (add-hook 'python-mode-hook
-	  '(lambda ()
-	     (hs-minor-mode 1)))
+          '(lambda ()
+             (hs-minor-mode 1)))
 (add-hook 'ruby-mode-hook
-	  '(lambda ()
-	     (hs-minor-mode 1)))
+          '(lambda ()
+             (hs-minor-mode 1)))
 (add-hook 'arduino-mode-hook
-	  '(lambda ()
-	     (hs-minor-mode 1)))
+          '(lambda ()
+             (hs-minor-mode 1)))
 
 
 (define-key global-map (kbd "C-:") 'hs-toggle-hiding)
@@ -322,19 +336,9 @@
 ;;-----------------------------------------------------------------------------------------------
 (require 'magit)
 (global-set-key (kbd "C-x g") 'magit-status)
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(minimap-automatically-delete-window t)
- '(minimap-minimum-width 10)
- '(minimap-mode nil)
- '(minimap-width-fraction 0.02)
- '(minimap-window-location (quote right))
- '(package-selected-packages
-   (quote
-    (yaml-mode all-the-icons-dired all-the-icons-gnus all-the-icons-ivy yasnippet point-undo neotree magit irony-eldoc company-irony auto-complete-clang-async auto-complete-clang auctex-latexmk all-the-icons))))
+
+
+
 
 ;; let "C-x C-d" dired current directory
 (defun dired-here ()
@@ -346,23 +350,6 @@
 (ffap-bindings)
 
 ;;------------------------------------------------------------------------------------------------
-;; intelligent C-f/C-b
-;;------------------------------------------------------------------------------------------------
-(defun forward-char-or-dabbrev-expand (arg)
-  (interactive "^p")
-  (if (and (= arg 1) (= (point) (line-end-position)))
-      (dabbrev-expand nil)
-    (forward-char arg)))
-(global-set-key (kbd "\C-f") 'forward-char-or-dabbrev-expand)
-
-(defun backward-char-or-backward-kill-word (arg)
-  (interactive "^p")
-  (if (and (= arg 1) (= (point) (line-end-position)))
-      (backward-kill-word 1)
-    (backward-char arg)))
-(global-set-key "\C-b" 'backward-char-or-backward-kill-word)
-
-;;------------------------------------------------------------------------------------------------
 ;; for whitespace-mode
 ;;------------------------------------------------------------------------------------------------
 (require 'whitespace)
@@ -370,12 +357,12 @@
 (setq whitespace-style '(face tabs tab-mark spaces space-mark))
 (setq whitespace-display-mappings
       '((space-mark ?\u3000 [?\u25a1])
-	;; WARNING: the mapping below has a problem.
-	;; When a TAB occupies exactly one column, it will display the
-	;; character ?\xBB at that column followed by a TAB which goes to
-	;; the next TAB column.
-	;; If this is a problem for you, please, comment the line below.
-	(tab-mark ?\t [?\xBB ?\t] [?\\ ?\t])))
+        ;; WARNING: the mapping below has a problem.
+        ;; When a TAB occupies exactly one column, it will display the
+        ;; character ?\xBB at that column followed by a TAB which goes to
+        ;; the next TAB column.
+        ;; If this is a problem for you, please, comment the line below.
+        (tab-mark ?\t [?\xBB ?\t] [?\\ ?\t])))
 (setq whitespace-space-regexp "\\(\u3000+\\)")
 (set-face-foreground 'whitespace-tab "#adff2f")
 (set-face-background 'whitespace-tab 'nil)
@@ -392,16 +379,16 @@
 ;;------------------------------------------------------------------------------------------------
 (autoload 'markdown-mode "~/.emacs.d/markdown-mode/markdown-mode.el" "Major mode for editing Markdown files" t)
 (setq auto-mode-alist (cons
-		       '("\\.md" . markdown-mode)
-		       auto-mode-alist))
+                       '("\\.md" . markdown-mode)
+                       auto-mode-alist))
 
-;;------------------------------------------------------------------------------------------------
-;;auto  all indent
-;;------------------------------------------------------------------------------------------------
-(defun all-indent ()
-     (interactive)
-     (mark-whole-buffer)
-     (indent-region (region-beginning)(region-end))
-     (point-undo)) ;;関数定義
+;; ;;------------------------------------------------------------------------------------------------
+;; ;;auto  all indent
+;; ;;------------------------------------------------------------------------------------------------
+;; (defun all-indent ()
+;;   (interactive)
+;;   (mark-whole-buffer)
+;;   (indent-region (region-beginning)(region-end))
+;;   (point-undo)) ;;関数定義
 
-(global-set-key (kbd  "C-x C-]") 'all-indent)
+;; (global-set-key (kbd  "C-x C-]") 'all-indent)
