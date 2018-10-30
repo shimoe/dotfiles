@@ -150,3 +150,4 @@ function promps {
 promps
 
 PATH="$HOME/bin:$HOME/.local/bin:$PATH"
+

@@ -19,3 +19,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 fi
+
+
+#fetch all scripts
+alias fetch_all='source ~/scripts/fetch_all.sh'
