@@ -22,4 +22,4 @@ fi
 
 
 #fetch all scripts
-alias fetch_all='source ~/.scripts/fetch_all.sh'
+alias fetch_all='source ~/.scripts/Git/fetch_all.sh'
