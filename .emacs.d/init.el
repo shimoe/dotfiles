@@ -275,7 +275,9 @@
 (add-hook 'arduino-mode-hook
           '(lambda ()
              (hs-minor-mode 1)))
-
+(add-hook 'sh-mode-hook
+          '(lambda ()
+             (hs-minor-mode 1)))
 
 (define-key global-map (kbd "C-:") 'hs-toggle-hiding)
 
