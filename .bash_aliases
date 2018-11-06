@@ -23,3 +23,10 @@ fi
 
 #fetch all scripts
 alias fetch_all='source ~/.scripts/Git/fetch_all.sh'
+
+#more cd
+alias cdw='cd ~/workspace'
+alias ud='cd ../'
+
+#typo
+alias emcas='emacs'

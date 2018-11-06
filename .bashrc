@@ -100,11 +100,6 @@ source /opt/ros/kinetic/setup.bash
 
 #default editor setting
 export EDITOR='emacs'
-alias emcas='emacs'
-
-#more cd
-alias cdw='cd ~/workspace'
-alias ud='cd ../'
 
 
 export CXX='g++-7'
@@ -145,7 +140,7 @@ function promps {
         *)      TITLEBAR="";;
     esac
     local BASE="\u@\h"
-    PS1="${TITLEBAR}${WHITE}${BASE}${WHITE}:${WHITE}\w${GREEN}\$(parse_git_branch)\n${BLUE}\$${WHITE} "
+    PS1="\n${WHITE}${BASE}${WHITE}:${WHITE}\w${GREEN}\$(parse_git_branch)\n${WHITE}\$${WHITE} "
 }
 promps
 
