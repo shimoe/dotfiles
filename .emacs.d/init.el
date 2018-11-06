@@ -337,7 +337,7 @@
  '(minimap-window-location (quote right))
  '(package-selected-packages
    (quote
-    (multi-term minimap yaml-mode all-the-icons-dired all-the-icons-gnus all-the-icons-ivy yasnippet point-undo neotree magit irony-eldoc company-irony auto-complete-clang-async auto-complete-clang auctex-latexmk all-the-icons))))
+    (markdown-preview-mode markdown-preview-eww multi-term minimap yaml-mode all-the-icons-dired all-the-icons-gnus all-the-icons-ivy yasnippet point-undo neotree magit irony-eldoc company-irony auto-complete-clang-async auto-complete-clang auctex-latexmk all-the-icons))))
 
 
 
@@ -382,6 +382,10 @@
 (setq auto-mode-alist (cons
                        '("\\.md" . markdown-mode)
                        auto-mode-alist))
+(autoload 'markdown-preview-mode "markdown-preview-mode.el" t)
+(setq markdown-preview-stylesheets (list "github.css"))
+(global-set-key (kbd "C-c M") 'markdown-preview-mode)
+
 
 ;;------------------------------------------------------------------------------------------------
 ;; terminal-mode
