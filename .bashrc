@@ -145,4 +145,5 @@ function promps {
 promps
 
 PATH="$HOME/bin:$HOME/.local/bin:$PATH"
-
+source /opt/Algoryx/AgX-2.26.1.0/setup_env.bash
+source ~/.rosaddress/rosaddress.bash
