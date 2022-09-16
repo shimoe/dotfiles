@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo apt install emacs25 terminator gparted indicator-multiload 
+sudo apt install terminator gparted indicator-multiload 

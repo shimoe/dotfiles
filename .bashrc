@@ -96,10 +96,10 @@ if ! shopt -oq posix; then
 fi
 
 #ROS setting
-source /opt/ros/kinetic/setup.bash
+source /opt/ros/melodic/setup.bash
 
 #default editor setting
-export EDITOR='emacs'
+export EDITOR='code'
 
 
 export CXX='g++-7'
@@ -145,5 +145,4 @@ function promps {
 promps
 
 PATH="$HOME/bin:$HOME/.local/bin:$PATH"
-source /opt/Algoryx/AgX-2.26.1.0/setup_env.bash
 source ~/.rosaddress/rosaddress.bash

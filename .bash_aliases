@@ -22,7 +22,7 @@ fi
 
 
 #fetch all scripts
-alias fetch_all='source ~/.scripts/Git/fetch_all.sh'
+alias git-all='source ~/.scripts/Git/git_all.sh'
 
 #more cd
 alias cdw='cd ~/workspace'
