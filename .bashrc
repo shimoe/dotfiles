@@ -96,7 +96,8 @@ if ! shopt -oq posix; then
 fi
 
 #ROS setting
-source /opt/ros/melodic/setup.bash
+source /opt/ros/foxy/setup.bash
+export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 
 #default editor setting
 export EDITOR='code'
